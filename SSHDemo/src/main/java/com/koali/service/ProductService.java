@@ -16,7 +16,6 @@ public class ProductService {
     }
 
     public void save(Product product){
-        System.out.println("Service中的ProductDao被执行了");
         productDao.save(product);
     }
 }

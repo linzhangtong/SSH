@@ -4,8 +4,8 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="ssh" extends="struts-default" namespace="/">
-        <action name="product_*" class="com.koali.action.ProductAction" method="{1}">
+    <package name="ssh" extends="struts-default" namespace="/product">
+        <action name="product_*" class="productAction" method="{1}">
         </action>
     </package>
 </struts>

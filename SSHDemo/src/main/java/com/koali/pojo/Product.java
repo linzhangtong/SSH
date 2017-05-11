@@ -1,34 +1,34 @@
 package com.koali.pojo;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by Elric on 2017/5/6.
  */
+@Entity
+@Table(name = "product")
 public class Product {
-    private Integer pId;
-    private String pName;
-    private String pPrice;
-
-    public Integer getpId() {
-        return pId;
+    private Integer pid;
+    private String pname;
+    private Double price;
+    public Integer getPid() {
+        return pid;
     }
-
-    public void setpId(Integer pId) {
-        this.pId = pId;
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
-
-    public String getpName() {
-        return pName;
+    public String getPname() {
+        return pname;
     }
-
-    public void setpName(String pName) {
-        this.pName = pName;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
-
-    public String getpPrice() {
-        return pPrice;
+    public Double getPrice() {
+        return price;
     }
-
-    public void setpPrice(String pPrice) {
-        this.pPrice = pPrice;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
