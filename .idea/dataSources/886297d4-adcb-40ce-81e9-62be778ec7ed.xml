@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ssh@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ssh">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="bms"/>
+    <schema id="4" parent="1" name="csharp"/>
+    <schema id="5" parent="1" name="dbdesiger"/>
+    <schema id="6" parent="1" name="foreign"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="messagedb"/>
+    <schema id="9" parent="1" name="mydb"/>
+    <schema id="10" parent="1" name="mysql"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="picture"/>
+    <schema id="13" parent="1" name="sakila"/>
+    <schema id="14" parent="1" name="seckill"/>
+    <schema id="15" parent="1" name="shiro"/>
+    <schema id="16" parent="1" name="ssmdemo"/>
+    <schema id="17" parent="1" name="struts"/>
+    <schema id="18" parent="1" name="studydatabase"/>
+    <schema id="19" parent="1" name="sys"/>
+    <schema id="20" parent="1" name="taotao"/>
+    <schema id="21" parent="1" name="taotaotest"/>
+    <schema id="22" parent="1" name="test"/>
+    <schema id="23" parent="1" name="world"/>
+    <table id="24" parent="2" name="customer"/>
+    <table id="25" parent="2" name="department"/>
+    <table id="26" parent="2" name="employee"/>
+    <table id="27" parent="2" name="product"/>
+    <table id="28" parent="2" name="stock"/>
+    <table id="29" parent="2" name="users"/>
+    <column id="30" parent="24" name="CUST_ID">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="24" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="24" name="AGE">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="33" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CUST_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="25" name="dir">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="25" name="dname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="36" parent="25" name="ddesc">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="37" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dir</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="26" name="eid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="26" name="ename">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="40" parent="26" name="sex">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="41" parent="26" name="birthday">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="42" parent="26" name="joinDate">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="43" parent="26" name="eno">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="44" parent="26" name="username">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="45" parent="26" name="password">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="46" parent="26" name="dno">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="47" parent="26" name="FKliyqiooso8ar5j2n18pry22p2">
+      <ColNames>dno</ColNames>
+    </index>
+    <key id="48" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>eid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="26" name="FKliyqiooso8ar5j2n18pry22p2">
+      <ColNames>dno</ColNames>
+      <RefSchemaName>ssh</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>dir</RefColNames>
+    </foreign-key>
+    <column id="50" parent="27" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="27" name="pname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="52" parent="27" name="price">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <key id="53" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="28" name="STOCK_ID">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="28" name="STOCK_CODE">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="28" name="STOCK_NAME">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="28" name="UNI_STOCK_ID">
+      <ColNames>STOCK_CODE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="58" parent="28" name="UNI_STOCK_NAME">
+      <ColNames>STOCK_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>STOCK_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="60" parent="28" name="UNI_STOCK_ID">
+      <ColNames>STOCK_CODE</ColNames>
+      <UnderlyingIndexName>UNI_STOCK_ID</UnderlyingIndexName>
+    </key>
+    <key id="61" parent="28" name="UNI_STOCK_NAME">
+      <ColNames>STOCK_NAME</ColNames>
+      <UnderlyingIndexName>UNI_STOCK_NAME</UnderlyingIndexName>
+    </key>
+    <column id="62" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="63" parent="29" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="64" parent="29" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="65" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

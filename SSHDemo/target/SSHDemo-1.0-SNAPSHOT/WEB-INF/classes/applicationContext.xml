@@ -50,13 +50,14 @@ http://www.springframework.org/schema/tx/spring-tx.xsd http://www.alibaba.com/sc
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                <prop key="save*">PROPAGATION_REQUIRED</prop>
             </props>
         </property>
         <!--配置Hibernate的映射文件-->
         <property name="mappingResources">
             <list>
-                <value>Product.hbm.xml</value>
+                <value>hbm/Product.hbm.xml</value>
+                <value>hbm/Department.hbm.xml</value>
+                <value>hbm/Employee.hbm.xml</value>
             </list>
         </property>
         <property name="packagesToScan">
@@ -69,12 +70,30 @@ http://www.springframework.org/schema/tx/spring-tx.xsd http://www.alibaba.com/sc
     <bean id="productAction" class="com.koali.action.ProductAction" scope="prototype">
         <property name="productService" ref="productService"/>
     </bean>
+    <bean id="employeeAction" class="com.koali.action.EmployeeAction" scope="prototype">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+    <bean id="departmentAction" class="com.koali.action.DepartmentAction" scope="prototype">
+        <property name="departmentService" ref="departmentService"/>
+    </bean>
     <!--配置Service层的类-->
     <bean id="productService" class="com.koali.service.ProductService">
         <property name="productDao" ref="productDao"/>
     </bean>
+    <bean id="employeeService" class="com.koali.service.Impl.EmployeeServiceImpl">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+    <bean id="departmentService" class="com.koali.service.Impl.DepartmentServiceImpl">
+        <property name="departmentDao" ref="departmentDao"/>
+    </bean>
     <!--配置Dao层的类-->
     <bean id="productDao" class="com.koali.dao.ProductDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="employeeDao" class="com.koali.dao.Impl.EmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="departmentDao" class="com.koali.dao.Impl.DepartmentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <!--配置事务管理-->
@@ -83,5 +102,4 @@ http://www.springframework.org/schema/tx/spring-tx.xsd http://www.alibaba.com/sc
     </bean>
     <!--开启事务注解-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
-
 </beans>

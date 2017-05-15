@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>保存商品的信息</h1>
-<s:form action="/product/product_save" method="post" namespace="/" theme="simple">
+<s:form action="product_save" method="post" namespace="/" theme="simple">
     <table border="1" width="400">
         <tr>
             <td>商品名称</td>
